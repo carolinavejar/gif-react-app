@@ -1,6 +1,7 @@
 import React from 'react';
 import "materialize-css/dist/css/materialize.min.css";
 import { useState } from 'react/cjs/react.development';
+import { AddCategory } from './components/AddCategory';
 
 const GifExpertApp = () => {
 
@@ -8,22 +9,25 @@ const GifExpertApp = () => {
 
     const [categories, setCategories] = useState(['Rihanna', 'Ariana Grande', 'Black Pink']);
 
-    const handleAdd = () => {
-        // let category para probar estática
-        setCategories(['Denis Roshental', ...categories]);
-    }
+    // const handleAdd = () => {
+    //     // let category para probar estática
+    //     setCategories(['Denis Roshental', ...categories]);
+    // }
+
     return (
         <>
-            <h1>GifExpertApp</h1>
-            <hr></hr>   
-            <button onClick = { handleAdd }> Agregar </button> 
-            <ol>
-                {
-                    categories.map( (category) => {
-                        return <li key = {category}> {category} </li>
-                    })
-                }
-            </ol>
+            <div className = "container">
+                <h1>GifExpertApp</h1>
+                <AddCategory></AddCategory>
+                <hr></hr>   
+                <ol>
+                    {
+                        categories.map( (category) => {
+                            return <li key = {category}> {category} </li>
+                        })
+                    }
+                </ol>
+            </div>
         </>
        
     );
