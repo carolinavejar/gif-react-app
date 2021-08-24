@@ -1,9 +1,10 @@
 import React , { useState, useEffect } from 'react';
 import axios from 'axios';
+import { GifGridItem } from './GifGridItem';
 
 export const GifGrid = ({ category }) => {
 
-    const [state, setstate] = useState(initialState)
+    const [images, setImages] = useState([]);
 
     useEffect(() => {
         getGifs();
@@ -23,14 +24,22 @@ export const GifGrid = ({ category }) => {
                     url: img.images.downsized_medium.url
                 }
             });
-
-            console.log(`Gifs ${gifs}`);
+            setImages(gifs);
         })
     };
 
     return (
         <>
-           <h3> {category} </h3>
+            {
+                images.map( (img) => 
+                    <GifGridItem 
+                        key = { img.id }
+                        { ...img }
+                    >
+
+                    </GifGridItem>
+                )
+            }
         </>
     )
 }
