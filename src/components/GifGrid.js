@@ -1,7 +1,14 @@
-import React from 'react';
+import React , { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export const GifGrid = ({ category }) => {
+
+    const [state, setstate] = useState(initialState)
+
+    useEffect(() => {
+        getGifs();
+    }, []);
+    // ejecuta el código de arriba solo la primera vez que se renderiza
 
     const getGifs = () => {
         const api_key = 'URLjL49KyzdscasPa5146vq3CmpIYQjq';
@@ -21,17 +28,6 @@ export const GifGrid = ({ category }) => {
         })
     };
 
-    // Como el curso de udemy
-    const getGifsFetch = async () => {
-        const api_key = 'URLjL49KyzdscasPa5146vq3CmpIYQjq';
-        const cat = 'RIHANNA';
-        const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${ api_key }&q=${ cat }&limit=10`);
-        const data = await response.json();
-
-        console.log(`data getGifsFetch ${ data }`);
-    };
-
-    getGifs();
     return (
         <>
            <h3> {category} </h3>
