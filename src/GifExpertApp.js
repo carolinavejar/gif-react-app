@@ -18,7 +18,7 @@ const GifExpertApp = () => {
         <>
             <div className = "container">
                 <h1>GifExpertApp</h1>
-                <AddCategory></AddCategory>
+                <AddCategory setCategories = { setCategories }></AddCategory>
                 <hr></hr>   
                 <ol>
                     {
