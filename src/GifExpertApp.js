@@ -14,7 +14,6 @@ const GifExpertApp = () => {
                 <h1>GifExpertApp</h1>
                 <AddCategory setCategories = { setCategories }></AddCategory>
                 <hr></hr>   
-                <ol>
                     {
                         categories.map( (category) => 
                             <GifGrid 
@@ -24,7 +23,6 @@ const GifExpertApp = () => {
                             </GifGrid>
                         )
                     }
-                </ol>
             </div>
         </>
        
