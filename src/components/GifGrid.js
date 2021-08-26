@@ -1,30 +1,16 @@
-import React , { useState, useEffect } from 'react';
-import { GifGridItem } from './GifGridItem';
-import { getGifs } from '../helpers/getGIFs';
+import React  from 'react';
+import { useFetchGIF } from './hooks/useFetchGIF';
 
 export const GifGrid = ({ category }) => {
 
-    const [images, setImages] = useState([]);
-
-    useEffect(() => {
-        getGifs(category)
-        .then( (res) => {
-            setImages(res) 
-        });
-    }, [ category ]);
-    // ejecuta el código de arriba solo la primera vez que se renderiza
+    // const [images, setImages] = useState([]);
+    const { loading } = useFetchGIF();
 
     return (
         <>
+            { loading ? 'cargando ....' : 'cargado'}
             {
-                images.map( (img) => 
-                    <GifGridItem 
-                        key = { img.id }
-                        { ...img }
-                    >
 
-                    </GifGridItem>
-                )
             }
         </>
     )
