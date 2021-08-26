@@ -1,16 +1,23 @@
 import React  from 'react';
 import { useFetchGIF } from './hooks/useFetchGIF';
+import { GifGridItem } from './GifGridItem'
 
 export const GifGrid = ({ category }) => {
 
-    // const [images, setImages] = useState([]);
-    const { loading } = useFetchGIF();
+    const { data: images, loading } = useFetchGIF(category);
 
     return (
         <>
-            { loading ? 'cargando ....' : 'cargado'}
+            { loading && <p> Loading ...</p>}
             {
+                images.map( (img) => 
+                    <GifGridItem 
+                        key = { img.id }
+                        { ...img }
+                    >
 
+                    </GifGridItem>
+                )
             }
         </>
     )
