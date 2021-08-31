@@ -7,10 +7,14 @@ exports[`Pruebas de Gif Grid Item debe de mostrar <GifGridItem /> correctamente 
   <div
     className="card-image"
   >
-    <img />
+    <img
+      alt="Titulo"
+      src="https://localhost:3000"
+    />
     <div
       className="card-title"
     >
+      Titulo
        
     </div>
   </div>
