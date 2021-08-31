@@ -4,6 +4,7 @@ exports[` Pruebas en componente <AddCategory debe mostrarse correctanmente 1`] =
 <form
   onSubmit={[Function]}
 >
+  <p />
   <input
     className="input-field"
     onChange={[Function]}
