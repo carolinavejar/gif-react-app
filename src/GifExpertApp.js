@@ -4,9 +4,9 @@ import { useState } from 'react/cjs/react.development';
 import { AddCategory } from './components/AddCategory';
 import { GifGrid } from './components/GifGrid';
 
-const GifExpertApp = () => {
+const GifExpertApp = ({defaltCategories = []}) => {
 
-    const [categories, setCategories] = useState(['Rihanna']);
+    const [categories, setCategories] = useState(defaltCategories);
 
     return (
         <>
