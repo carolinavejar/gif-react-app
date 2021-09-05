@@ -21,12 +21,18 @@ describe('Pruebas componente GifGrid', () =>{
             id: '1',
             url: 'https://url.del.gif',
             title: 'Titulo GIF'
+        },
+        {
+            id: '2',
+            url: 'https://url.del.gif',
+            title: 'Titulo GIF'
         }]
         useFetchGIF.mockReturnValue({
             data : imgs,
             loading: false
         });
         const wrapper = shallow(<GifGrid category = {cat}  />);
-        expect (wrapper).toMatchSnapshot();
+        expect(wrapper.find('p').exists()).toBe(false);
+        expect(wrapper.find('GifGridItem').length).toBe(imgs.length);
     });
 })

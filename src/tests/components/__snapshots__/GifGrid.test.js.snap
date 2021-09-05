@@ -14,21 +14,3 @@ exports[`Pruebas componente GifGrid debe hacer match con snapshop 1`] = `
   </p>
 </Fragment>
 `;
-
-exports[`Pruebas componente GifGrid debe mostrar cuando se cargan imagenes 1`] = `
-<Fragment>
-  <h3
-    className="animate__animated animate__fadeIn"
-  >
-     
-    Rihanna
-     
-  </h3>
-  <GifGridItem
-    id="1"
-    key="1"
-    title="Titulo GIF"
-    url="https://url.del.gif"
-  />
-</Fragment>
-`;
