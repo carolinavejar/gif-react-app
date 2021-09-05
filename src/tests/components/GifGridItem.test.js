@@ -31,5 +31,4 @@ describe("Pruebas de Gif Grid Item", ()=> {
         // expect (className.includes('animate__bounce')).toBe(true);
         // ASI LO REALIZÓ EL PROFESOR
     });
-
 })
