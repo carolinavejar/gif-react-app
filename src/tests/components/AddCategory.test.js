@@ -15,14 +15,24 @@ describe(' Pruebas en componente <AddCategory',()=> {
     });
 
     test('debe cambiar input', () => {
-        const input = wrapper.find('input');
+        
         const value = 'Hola mundo'
-        input.simulate('change', { target : {value : value}});
+        wrapper.find('input').simulate('change', { target : {value : value}});
         expect(wrapper.find('p').text()).toBe(value);
     });
 
     test('no debe postear informacion con submit', () =>{
         wrapper.find('form').simulate('submit', { preventDefault(){}});
         expect(setCategories).not.toHaveBeenCalled();
-    })
+    });
+
+    test('debe llamar setCategories y limpiar caja de texto ', () => {
+        const value = "Carito";
+        wrapper.find('input').simulate('change', { target : {value}});
+
+        wrapper.find('form').simulate('submit', { preventDefault(){}});
+
+        expect(setCategories).toHaveBeenCalled();
+        expect(wrapper.find('input').prop('value')).toBe('');
+    })   
 })
