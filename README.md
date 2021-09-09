@@ -1,3 +1,9 @@
+# Contenido
+
+This projects contains content of React course, from class 65 to 100.
+
+The content seen in this course , can be seen in the commits made.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
