@@ -1,4 +1,4 @@
-# Contenido
+# Content
 
 This projects contains content of React course, from class 65 to 100.
 
